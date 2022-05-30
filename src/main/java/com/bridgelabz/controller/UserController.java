@@ -1,9 +1,6 @@
 package com.bridgelabz.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**********************************************
  * class :- Rest Controller Class
@@ -36,6 +33,16 @@ public class UserController {
      */
     @GetMapping("/getDataUsingReqParam")
     public String sayHello(@RequestParam(value = "name") String name) {
+        return " Hello " + name + " !";
+    }
+
+    /** Method :- Method to Get Data Using @PathVariable
+     * URL : http://localhost:8081/api/v1/getDataUsingPathVariable/mangesh
+     * @param name passing name as input
+     * @return
+     */
+    @GetMapping("/getDataUsingPathVariable/{name}")
+    public String sayHelloParam(@PathVariable String name) {
         return " Hello " + name + " !";
     }
 
