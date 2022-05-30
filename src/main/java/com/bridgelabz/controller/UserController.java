@@ -2,6 +2,7 @@ package com.bridgelabz.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**********************************************
@@ -24,6 +25,18 @@ public class UserController {
     @GetMapping("/getData")
     public String sayHello() {
         return " Hello From BridgeLabz.";
+    }
+
+    /**
+     * Method :- Method to get Data Using @RequestParam
+     * URL : http://localhost:8081/api/v1/getDataUsingReqParam?name=Mangesh
+     *
+     * @param name passing name as input
+     * @return
+     */
+    @GetMapping("/getDataUsingReqParam")
+    public String sayHello(@RequestParam(value = "name") String name) {
+        return " Hello " + name + " !";
     }
 
 }
