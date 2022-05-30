@@ -1,5 +1,6 @@
 package com.bridgelabz.controller;
 
+import com.bridgelabz.model.User;
 import org.springframework.web.bind.annotation.*;
 
 /**********************************************
@@ -46,4 +47,13 @@ public class UserController {
         return " Hello " + name + " !";
     }
 
+    /** Method :- Method to Add User using Post Method
+     * URL : http://localhost:8081/api/v1/addUser
+     * @param user passing User Object as input
+     * @return
+     */
+    @PostMapping("/addUser")
+    public String addUser(@RequestBody User user){
+        return " Hello "+user.getFirstName()+" "+user.getLastName()+" !";
+    }
 }
